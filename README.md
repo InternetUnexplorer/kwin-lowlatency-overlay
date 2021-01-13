@@ -1,5 +1,7 @@
 # NixOS overlay for kwin-lowlatency
 
+![Build](https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/workflows/Build/badge.svg)
+
 This is an overlay for NixOS that replaces the `kwin` package with
 @tildearrow's [kwin-lowlatency][1].
 
