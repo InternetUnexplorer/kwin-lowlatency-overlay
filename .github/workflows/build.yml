@@ -9,16 +9,19 @@ jobs:
     name: Build (${{ matrix.channel }})
     runs-on: ubuntu-latest
 
+    # Build for a single channel if triggered by a repository_dispatch event,
+    # otherwise build for all channels.
+    # TODO: This is a bit of a hack and does not scale well.
     strategy:
       matrix:
         channel: [nixos-unstable, nixos-unstable-small]
-        skip:
-          - ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.channel != matrix.channel }}
+        dispatch_channel:
+          - ${{ github.event.client_payload.channel }}
         exclude:
           - channel: nixos-unstable
-            skip: true
+            dispatch_channel: nixos-unstable-small
           - channel: nixos-unstable-small
-            skip: true
+            dispatch_channel: nixos-unstable
 
     steps:
     - uses: actions/checkout@v2.3.4
