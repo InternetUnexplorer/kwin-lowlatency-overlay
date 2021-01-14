@@ -17,7 +17,7 @@ Add the following to your `configuration.nix`:
 {
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
-      url = "https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/archive/main.tar.gz";
+      url = "https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/archive/nixos-unstable.tar.gz";
     }))
   ];
 }
@@ -54,7 +54,7 @@ for how to improve them, or anything else really, please [open an issue][7].
 [1]: https://github.com/tildearrow/kwin-lowlatency
 [2]: https://app.cachix.org/cache/kwin-lowlatency
 [3]: https://status.nixos.org
-[4]: https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/blob/main/.github/workflows/build.yml
+[4]: https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/blob/nixos-unstable/.github/workflows/build.yml
 [5]: https://github.com/InternetUnexplorer/nix-channel-watcher
 [6]: https://gist.github.com/InternetUnexplorer/32afbf1c1cc862c62c7107ff10cb069f
 [7]: https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/issues/new
