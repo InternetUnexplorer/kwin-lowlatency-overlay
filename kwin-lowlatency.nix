@@ -1,9 +1,9 @@
-{ plasma5, fetchpatch }:
+{ plasma5Packages, fetchpatch }:
 
 let
   pname = "kwin-lowlatency";
   version = "5.20.5";
-in plasma5.kwin.overrideAttrs (oldAttrs: {
+in plasma5Packages.kwin.overrideAttrs (oldAttrs: {
   name = "${pname}-${version}";
   patches = (oldAttrs.patches or [ ]) ++ [
     (fetchpatch {
