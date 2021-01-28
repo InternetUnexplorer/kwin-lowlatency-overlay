@@ -2,6 +2,8 @@ self: super:
 
 {
   plasma5Packages = super.plasma5Packages // {
-    kwin = super.lib.callPackageWith (super) ./kwin-lowlatency.nix { };
+    plasma5 = super.plasma5Packages.plasma5 // {
+      kwin = super.lib.callPackageWith (super) ./kwin-lowlatency.nix { };
+    };
   };
 }
