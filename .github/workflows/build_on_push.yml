@@ -7,12 +7,14 @@ jobs:
     name: Dispatch build (nixos-unstable)
     if: github.ref == 'refs/heads/nixos-unstable'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        channel: [nixos-unstable, nixos-unstable-small]
     steps:
       - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.GH_TOKEN }}
-          event-type: 'Build: ${{ matrix.channel }} (push)'
-          client-payload: '{"channel": "${{ matrix.channel }}"}'
+          event-type: 'Build: nixos-unstable (push)'
+          client-payload: '{"channel": "nixos-unstable"}'
+      - uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          event-type: 'Build: nixos-unstable-small (push)'
+          client-payload: '{"channel": "nixos-unstable-small"}'
