@@ -14,5 +14,5 @@ jobs:
       - uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.GH_TOKEN }}
-          event-type: Build: ${{ matrix.channel }} (push)
+          event-type: 'Build: ${{ matrix.channel }} (push)'
           client-payload: '{"channel": "${{ matrix.channel }}"}'
