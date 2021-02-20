@@ -4,8 +4,8 @@ on: push
 
 jobs:
   build_nixos_unstable:
-    name: Dispatch build (${{ matrix.channel }})
-    if: github.ref == 'heads/refs/master'
+    name: Dispatch build (nixos-unstable)
+    if: github.ref == 'refs/heads/nixos-unstable'
     runs-on: ubuntu-latest
     strategy:
       matrix:
