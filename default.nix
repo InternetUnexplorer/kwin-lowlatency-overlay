@@ -1,9 +1,8 @@
-self: super:
-
+final: prev:
 {
-  plasma5Packages = super.plasma5Packages // {
-    plasma5 = super.plasma5Packages.plasma5 // {
-      kwin = super.lib.callPackageWith (super) ./kwin-lowlatency.nix { };
+  plasma5Packages = prev.plasma5Packages // {
+    plasma5 = prev.plasma5Packages.plasma5 // {
+      kwin = prev.lib.callPackageWith (prev) ./kwin-lowlatency.nix { };
     };
   };
 }
