@@ -1,6 +1,9 @@
 # NixOS overlay for kwin-lowlatency
 
-![Build](https://github.com/InternetUnexplorer/kwin-lowlatency-overlay/workflows/Build/badge.svg)
+> **This repository has been archived, as Plasma 5.21 has been merged to Nixpkgs master and there is (at the time of writing) no kwin-lowlatency 5.21 yet. Also, the latency improvements to KWin in 5.21 are good enough that I personally do not have much of a reason to use kwin-lowlatency anymore.**
+> 
+> **I think I am the only person who is using this overlay, but if you are using it and this is a problem for you, please let me know.**
+
 
 This is an overlay for NixOS that replaces the `kwin` package with
 @tildearrow's [kwin-lowlatency][1].
